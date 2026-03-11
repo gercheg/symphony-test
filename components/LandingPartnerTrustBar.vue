@@ -1,14 +1,14 @@
 <script setup lang="ts">
 const logoPlaceholders = [
-  'Stanford',
   'MIT',
-  'Harvard',
-  'Oxford',
-  'Cambridge',
-  'Yale',
-  'Princeton',
-  'Columbia',
-  'UCLA'
+  'Cornell University',
+  'DSU',
+  'IIM',
+  'Indiana University',
+  'BIUM',
+  'NYC',
+  'NYC',
+  'NYC'
 ]
 </script>
 
@@ -16,11 +16,15 @@ const logoPlaceholders = [
   <section class="partner-trust" aria-labelledby="partner-trust-title">
     <div class="partner-trust__container">
       <h2 id="partner-trust-title" class="partner-trust__title">
-        AI writing tools trusted across universities
+        AI writing tools trusted across universities and workplaces
       </h2>
 
-      <ul class="partner-trust__logos" aria-label="University partner logos">
-        <li v-for="logo in logoPlaceholders" :key="logo" class="partner-trust__logo-item">
+      <ul class="partner-trust__logos" aria-label="University and workplace partner logos">
+        <li
+          v-for="(logo, index) in logoPlaceholders"
+          :key="`${logo}-${index}`"
+          class="partner-trust__logo-item"
+        >
           <div class="partner-trust__logo-box">
             {{ logo }}
           </div>
@@ -56,10 +60,8 @@ const logoPlaceholders = [
   padding: 0;
   list-style: none;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 16px;
-  overflow-x: auto;
-  scrollbar-width: thin;
 }
 
 .partner-trust__logo-item {
@@ -67,8 +69,8 @@ const logoPlaceholders = [
 }
 
 .partner-trust__logo-box {
-  min-width: 112px;
-  height: 52px;
+  width: 192px;
+  height: 108px;
   padding: 0 14px;
   border: 1px solid #d1d5db;
   border-radius: 10px;
@@ -91,6 +93,11 @@ const logoPlaceholders = [
 
   .partner-trust__container {
     padding: 24px 16px;
+  }
+
+  .partner-trust__logo-box {
+    width: 160px;
+    height: 90px;
   }
 }
 </style>
