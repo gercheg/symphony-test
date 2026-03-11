@@ -3,18 +3,12 @@ import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import gsap from 'gsap'
 
 const rotatingEl = ref<HTMLElement | null>(null)
-const phrases = ['Detect AI', 'Flag plagiarism', 'Verify originality', 'Protect your voice', 'Publish confidently']
+const phrases = ['Detect AI', 'Sound human', "Prove it's yours", 'Fix grammar', 'Go global']
 let phraseIndex = 0
 let intervalId: ReturnType<typeof setInterval> | null = null
 let tween: gsap.core.Tween | null = null
 
-const tabs = [
-  { label: 'Academic', icon: 'i-heroicons-academic-cap' },
-  { label: 'SEO', icon: 'i-heroicons-magnifying-glass' },
-  { label: 'Social', icon: 'i-heroicons-chat-bubble-oval-left-ellipsis' },
-  { label: 'Email', icon: 'i-heroicons-envelope' },
-  { label: 'Reports', icon: 'i-heroicons-chart-bar-square' }
-]
+const tabs = ['Detect AI', 'Humanize Text', 'Check Plagiarism', 'Grammar', 'Translate']
 
 const animatePhrase = () => {
   if (!rotatingEl.value) {
@@ -60,7 +54,14 @@ onBeforeUnmount(() => {
 
 <template>
   <section class="hero">
-    <div class="hero__badge">Over 10 811 new users joined today</div>
+    <div class="hero__badge">
+      <span class="hero__avatar-strip" aria-hidden="true">
+        <img src="https://i.pravatar.cc/42?img=12" alt="" class="hero__avatar" loading="lazy" decoding="async">
+        <img src="https://i.pravatar.cc/42?img=24" alt="" class="hero__avatar" loading="lazy" decoding="async">
+        <img src="https://i.pravatar.cc/42?img=36" alt="" class="hero__avatar" loading="lazy" decoding="async">
+      </span>
+      <span>Over 10 811 new users joined today</span>
+    </div>
 
     <h1 class="hero__title">
       Write without second-guessing.
@@ -73,15 +74,28 @@ onBeforeUnmount(() => {
       <div class="hero__tabs" role="tablist" aria-label="Hero tabs">
         <button
           v-for="(tab, index) in tabs"
-          :key="tab.label"
+          :key="tab"
           class="hero__tab"
           :class="{ 'hero__tab--active': index === 0 }"
           role="tab"
           :aria-selected="index === 0"
           type="button"
         >
-          <UIcon :name="tab.icon" class="hero__icon" aria-hidden="true" />
-          <span>{{ tab.label }}</span>
+          <span class="hero__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="hero__scan-icon">
+              <path
+                d="M4 7V5h2V3h2v4H4Zm12-4h2v2h2v2h-4V3ZM4 17h4v4H6v-2H4v-2Zm16 0v2h-2v2h-2v-4h4ZM8 8h8v8H8V8Zm2 2v4h4v-4h-4Z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg viewBox="0 0 24 24" class="hero__sparkle-icon">
+              <path
+                d="m12 2 1.7 4.3L18 8l-4.3 1.7L12 14l-1.7-4.3L6 8l4.3-1.7L12 2Zm7 10 1 2.5L22.5 15 20 16l-1 2.5L18 16l-2.5-1 2.5-1 1-2.5ZM5 14l1.2 3.1L9.3 18l-3.1 1.2L5 22l-1.2-2.8L.7 18l3.1-.9L5 14Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span>{{ tab }}</span>
         </button>
       </div>
     </div>
@@ -99,12 +113,30 @@ onBeforeUnmount(() => {
 .hero__badge {
   background: #f3f4f6;
   border-radius: 9999px;
-  padding: 10px 18px;
+  padding: 6px 12px;
   color: #030712;
   font-family: 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero__avatar-strip {
+  width: 132px;
+  height: 42px;
+  border-radius: 9999px;
+  overflow: hidden;
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.hero__avatar {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
 }
 
 .hero__title {
@@ -170,8 +202,19 @@ onBeforeUnmount(() => {
 }
 
 .hero__icon {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+.hero__scan-icon,
+.hero__sparkle-icon {
+  width: 12px;
+  height: 12px;
   color: currentColor;
 }
 
