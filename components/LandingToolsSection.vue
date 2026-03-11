@@ -1,7 +1,7 @@
 <template>
   <section class="tools" aria-labelledby="writing-toolkit-title">
     <div class="tools__container">
-      <h2 id="writing-toolkit-title" class="tools__title">A writing toolkit that has your back - start to finish</h2>
+      <h2 id="writing-toolkit-title" class="tools__title">A writing toolkit that has your back</h2>
 
       <div class="tools__steps">
         <article class="tool-step">
@@ -303,3 +303,4 @@
   }
 }
 </style>
+
