@@ -60,9 +60,7 @@ onBeforeUnmount(() => {
 
 <template>
   <section class="hero">
-    <div class="hero__badge">
-      Over 10 811 new users joined today
-    </div>
+    <div class="hero__badge">Over 10 811 new users joined today</div>
 
     <h1 class="hero__title">
       Write without second-guessing.
@@ -71,19 +69,21 @@ onBeforeUnmount(() => {
 
     <p class="hero__subtitle">Use AI. Keep the credit.</p>
 
-    <div class="hero__tabs" role="tablist" aria-label="Hero tabs">
-      <button
-        v-for="(tab, index) in tabs"
-        :key="tab.label"
-        class="hero__tab"
-        :class="{ 'hero__tab--active': index === 0 }"
-        role="tab"
-        :aria-selected="index === 0"
-        type="button"
-      >
-        <UIcon :name="tab.icon" class="hero__icon" aria-hidden="true" />
-        <span>{{ tab.label }}</span>
-      </button>
+    <div class="hero__tabs-wrap">
+      <div class="hero__tabs" role="tablist" aria-label="Hero tabs">
+        <button
+          v-for="(tab, index) in tabs"
+          :key="tab.label"
+          class="hero__tab"
+          :class="{ 'hero__tab--active': index === 0 }"
+          role="tab"
+          :aria-selected="index === 0"
+          type="button"
+        >
+          <UIcon :name="tab.icon" class="hero__icon" aria-hidden="true" />
+          <span>{{ tab.label }}</span>
+        </button>
+      </div>
     </div>
   </section>
 </template>
@@ -134,9 +134,16 @@ onBeforeUnmount(() => {
   text-align: center;
 }
 
-.hero__tabs {
+.hero__tabs-wrap {
+  width: 100%;
   margin-top: 36px;
-  width: min(960px, calc(100vw - 32px));
+  overflow-x: auto;
+}
+
+.hero__tabs {
+  width: 960px;
+  min-width: 960px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   border-bottom: 1px solid #e5e7eb;
@@ -169,31 +176,8 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding-top: 40px;
-  }
-
-  .hero__title {
-    font-size: 36px;
-  }
-
   .hero__subtitle {
     display: none;
-  }
-
-  .hero__tabs {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px 8px;
-    border-bottom: 0;
-  }
-
-  .hero__tab {
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-  }
-
-  .hero__tab--active {
-    border: 1px solid #000000;
   }
 }
 </style>
