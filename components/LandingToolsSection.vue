@@ -1,13 +1,13 @@
 <template>
   <section class="tools" aria-labelledby="writing-toolkit-title">
     <div class="tools__container">
-      <h2 id="writing-toolkit-title" class="tools__title">A writing toolkit that has your back</h2>
+      <h2 id="writing-toolkit-title" class="tools__title">A writing toolkit that has your back - start to finish</h2>
 
       <div class="tools__steps">
         <article class="tool-step">
           <div class="tool-step__content">
             <p class="tool-step__label">Step 1</p>
-            <h3 class="tool-step__heading">Catch tone and grammar issues in your drafts</h3>
+            <h3 class="tool-step__heading">Write it right, hit send</h3>
             <p class="tool-step__text">
               Paste your email and get instant correction notes before you hit send.
             </p>
@@ -15,16 +15,16 @@
 
           <div class="tool-card tool-card--email" aria-label="Email correction example">
             <p class="tool-card__eyebrow">Draft email</p>
-            <p class="tool-card__line">Hi team, I has reviewed the latest copy and it look great.</p>
-            <p class="tool-card__line tool-card__line--muted">Let me know if there is questions.</p>
-            <span class="correction-badge correction-badge--green">Corrected: grammar and agreement</span>
+            <p class="tool-card__line">Many students experiance financial difficulties...</p>
+            <p class="tool-card__line tool-card__line--muted">Many students experience financial difficulties...</p>
+            <span class="correction-badge correction-badge--green">Corrected: experience</span>
           </div>
         </article>
 
         <article class="tool-step tool-step--reverse">
           <div class="tool-step__content">
             <p class="tool-step__label">Step 2</p>
-            <h3 class="tool-step__heading">Rewrite with clarity while keeping your voice</h3>
+            <h3 class="tool-step__heading">Sharper words, stronger impact</h3>
             <p class="tool-step__text">
               Use one-click rewrites that keep your intent and remove awkward phrasing.
             </p>
@@ -43,24 +43,24 @@
         <article class="tool-step">
           <div class="tool-step__content">
             <p class="tool-step__label">Step 3</p>
-            <h3 class="tool-step__heading">Score confidence with multi-model AI signals</h3>
+            <h3 class="tool-step__heading">Sound human, stay credible</h3>
             <p class="tool-step__text">
               Compare output quality across models and ship the strongest version.
             </p>
           </div>
 
           <div class="tool-card tool-card--gauge" aria-label="Quality gauge and model badges">
-            <div class="gauge-wrap" role="img" aria-label="Quality score 91 percent">
+            <div class="gauge-wrap" role="img" aria-label="Quality score 100 percent">
               <div class="gauge"></div>
               <div class="gauge__center">
-                <p class="gauge__value">91%</p>
-                <p class="gauge__label">Confidence</p>
+                <p class="gauge__value">100%</p>
+                <p class="gauge__label">Human sounding</p>
               </div>
             </div>
             <div class="model-badges">
-              <span class="model-badge">GPT-4.1</span>
-              <span class="model-badge">Claude 3.7</span>
-              <span class="model-badge">Gemini 2.0</span>
+              <span class="model-badge">OpenAI GPT-5.1</span>
+              <span class="model-badge">Claude</span>
+              <span class="model-badge">Grok</span>
             </div>
           </div>
         </article>
@@ -72,11 +72,11 @@
 <style scoped>
 .tools {
   padding: 120px 24px;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  background: #ffffff;
 }
 
 .tools__container {
-  max-width: 1120px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -179,12 +179,12 @@
 
 .correction-badge--green {
   color: #166534;
-  background: #dcfce7;
+  background: #f0fdf4;
 }
 
 .correction-badge--blue {
   color: #1d4ed8;
-  background: #dbeafe;
+  background: #eff6ff;
 }
 
 .tool-card__line--rewrite {
@@ -197,28 +197,21 @@
   position: absolute;
   left: 0;
   bottom: 2px;
-  width: 0;
+  width: 100%;
   height: 2px;
   border-radius: 2px;
   background: #3b82f6;
-  animation: underline-fill 2s ease-out infinite;
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: underline-scale 0.5s ease-out infinite alternate;
 }
 
-@keyframes underline-fill {
+@keyframes underline-scale {
   0% {
-    width: 0;
-    opacity: 0;
-  }
-  18% {
-    opacity: 1;
-  }
-  68% {
-    width: 100%;
-    opacity: 1;
+    transform: scaleX(0);
   }
   100% {
-    width: 100%;
-    opacity: 0;
+    transform: scaleX(1);
   }
 }
 
