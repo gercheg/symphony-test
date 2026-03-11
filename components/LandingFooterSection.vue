@@ -1,14 +1,18 @@
 <script setup lang="ts">
 const legalLinks = [
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms of Service', href: '#' },
-  { label: 'Cookie Policy', href: '#' },
+  { label: 'Contact us', href: '/contact-us' },
+  { label: 'Terms of Use', href: '/terms-of-use' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Billing Terms', href: '/billing-terms' },
+  { label: 'Refund Policy', href: '/refund-policy' },
 ]
 
 const productLinks = [
-  { label: 'Features', href: '#' },
-  { label: 'Pricing', href: '#' },
-  { label: 'Integrations', href: '#' },
+  { label: 'Chat', href: '/chat' },
+  { label: 'Images', href: '/images' },
+  { label: 'Documents with AI', href: '/documents-with-ai' },
+  { label: 'AI Detector', href: '/ai-detector' },
+  { label: 'AI Humanizer', href: '/ai-humanizer' },
 ]
 </script>
 
@@ -18,10 +22,9 @@ const productLinks = [
       <section class="footer-column footer-brand" aria-label="Company information">
         <p class="footer-logo">AskGPT</p>
         <address class="footer-address">
-          123 Market Street<br>
-          San Francisco, CA 94103<br>
-          United States
+          A-PLAYERSTECH Ltd, Loizou Askani 8, 3110, Limassol, Cyprus.
         </address>
+        <p class="footer-copy">Copyright (c) 2025</p>
       </section>
 
       <section class="footer-column" aria-label="Legal links">
@@ -43,7 +46,8 @@ const productLinks = [
       </section>
 
       <section class="footer-column" aria-label="Newsletter">
-        <h2 class="footer-title">Newsletter</h2>
+        <h2 class="footer-title">Get the latest updates about AI</h2>
+        <p class="footer-subtitle">Subscribe to AskGPT news</p>
         <form class="footer-newsletter" @submit.prevent>
           <label class="sr-only" for="footer-newsletter-email">Email address</label>
           <input
@@ -51,7 +55,7 @@ const productLinks = [
             type="email"
             name="email"
             autocomplete="email"
-            placeholder="Enter your email"
+            placeholder="Type your email"
             class="footer-input"
           >
         </form>
@@ -113,6 +117,22 @@ const productLinks = [
 .footer-address {
   margin: 0;
   font-style: normal;
+}
+
+.footer-copy {
+  margin: 0;
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.footer-subtitle {
+  margin: 8px 0 0;
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .footer-links {
