@@ -1,127 +1,82 @@
-<template>
-  <section class="detection-section" aria-label="AI detection demo section">
-    <div class="detection-card" aria-label="AI Content Detection demo">
-      <h2 class="card-title">AI Content Detection</h2>
+﻿<template>
+  <section class="detection-demo">
+    <div class="demo-card">
+      <h2 class="title">AI Content Detection</h2>
 
-      <div class="source-actions" role="group" aria-label="Input source">
-        <button type="button" class="source-btn">Paste Text</button>
-        <button type="button" class="source-btn">Sample Text</button>
-        <button type="button" class="source-btn">Upload File</button>
+      <div class="trust-row" aria-label="Trust indicators">
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false">
+              <path d="M12 2 4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3Z" />
+            </svg>
+          </span>
+          <span>End-to-end encrypted</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false">
+              <path
+                d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2Zm1 11h4v2h-6V7h2Z"
+              />
+            </svg>
+          </span>
+          <span>Auto-deleted in 24 hrs</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false">
+              <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" />
+            </svg>
+          </span>
+          <span>Results in 30 seconds</span>
+        </div>
+      </div>
+
+      <div class="brands" aria-label="Confirmed by">
+        <span class="brands-label">Confirmed by:</span>
+        <span>Turnitin</span>
+        <span>Scribbr</span>
+        <span>GPTZero</span>
+        <span>Copyleaks</span>
       </div>
 
       <textarea
-        class="content-input"
-        placeholder="Paste text to check for AI-generated content..."
+        class="input"
+        rows="6"
+        placeholder="Paste your AI-generated content here... (Try it now - no signup required)"
       />
 
-      <button type="button" class="analyze-btn">Analyze content</button>
-
-      <div class="trust-badges" aria-label="Trust indicators">
-        <div class="trust-item">
-          <span class="trust-icon" aria-hidden="true">&check;</span>
-          <span>99.7% Accurate</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon" aria-hidden="true">&check;</span>
-          <span>Secure Analysis</span>
-        </div>
-        <div class="trust-item confirmed-by">
-          <span class="trust-icon" aria-hidden="true">&check;</span>
-          <span>Confirmed by</span>
-          <span class="logo">MIT</span>
-          <span class="logo">Stanford</span>
-          <span class="logo">Forbes</span>
-        </div>
-      </div>
+      <button type="button" class="analyze-btn">Analyze Content</button>
     </div>
   </section>
 </template>
 
 <style scoped>
-.detection-section {
-  padding: 64px 16px;
-  background: #ffffff;
-}
-
-.detection-card {
+.detection-demo {
   width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 24px;
-  border: 2px solid #60a5fa;
-  box-shadow: 0 0 13px #60a5fa;
-  padding: 28px;
   display: flex;
-  flex-direction: column;
-  gap: 18px;
+  justify-content: center;
 }
 
-.card-title {
-  margin: 0;
-  font-size: 20px;
-  line-height: 1.25;
-  font-weight: 700;
-  color: #111827;
-}
-
-.source-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.source-btn {
-  width: 128px;
-  height: 42px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  background: #f9fafb;
-  color: #111827;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.content-input {
-  width: 100%;
-  min-height: 176px;
-  border-radius: 12px;
-  border: 1px solid #d1d5db;
+.demo-card {
+  width: 1200px;
+  max-width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 24px;
   background: #ffffff;
-  padding: 14px 16px;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #111827;
-  resize: vertical;
-  outline: none;
 }
 
-.content-input::placeholder {
-  color: #9ca3af;
+.title {
+  margin: 0 0 16px;
+  font-weight: 400;
 }
 
-.content-input:focus {
-  border-color: #93c5fd;
-  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
-}
-
-.analyze-btn {
-  width: 100%;
-  height: 56px;
-  border: 0;
-  border-radius: 12px;
-  background: #e5e7eb;
-  color: #9ca3af;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: not-allowed;
-}
-
-.trust-badges {
+.trust-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .trust-item {
@@ -130,42 +85,53 @@
   gap: 8px;
   color: #374151;
   font-size: 14px;
-  font-weight: 600;
 }
 
 .trust-icon {
-  width: 16px;
-  height: 16px;
-  color: #16a34a;
+  width: 18px;
+  height: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.trust-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: #16a34a;
+}
+
+.brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+  color: #4b5563;
   font-size: 14px;
-  font-weight: 700;
-  line-height: 1;
 }
 
-.confirmed-by {
-  gap: 8px;
-}
-
-.logo {
-  display: inline-flex;
-  align-items: center;
-  height: 24px;
-  padding: 0 8px;
-  border-radius: 6px;
-  border: 1px solid #d1d5db;
+.brands-label {
   color: #111827;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  background: #ffffff;
 }
 
-@media (max-width: 640px) {
-  .detection-card {
-    padding: 20px;
-  }
+.input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 14px 16px;
+  resize: vertical;
+  margin-bottom: 16px;
+  font: inherit;
+}
+
+.analyze-btn {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 999px;
+  background: #111827;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
 }
 </style>
