@@ -1,7 +1,7 @@
 <template>
   <section class="tools" aria-labelledby="writing-toolkit-title">
     <div class="tools__container">
-      <h2 id="writing-toolkit-title" class="tools__title">A writing toolkit that has your back</h2>
+      <h2 id="writing-toolkit-title" class="tools__title">A writing toolkit that has your back — start to finish</h2>
 
       <div class="tools__steps">
         <article class="tool-step">
@@ -17,7 +17,7 @@
             <p class="tool-card__eyebrow">Draft email</p>
             <p class="tool-card__line">Many students experiance financial difficulties...</p>
             <p class="tool-card__line tool-card__line--muted">Many students experience financial difficulties...</p>
-            <span class="correction-badge correction-badge--green">Corrected: experience</span>
+            <span class="correction-badge correction-badge--green">experience</span>
           </div>
         </article>
 
@@ -36,7 +36,7 @@
               Hi team, I reviewed the latest copy and it looks great.
             </p>
             <p class="tool-card__line tool-card__line--muted">Let me know if you have any questions.</p>
-            <span class="correction-badge correction-badge--blue">Clarity improved</span>
+            <span class="correction-badge correction-badge--blue">We will complete the project on time.</span>
           </div>
         </article>
 
@@ -178,12 +178,18 @@
 }
 
 .correction-badge--green {
-  color: #166534;
+  padding: 8px 16px;
+  border-radius: 24px;
+  border: 2px solid #16a34a;
+  font-family: 'SF Pro Display', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  color: #16a34a;
   background: #f0fdf4;
 }
 
 .correction-badge--blue {
-  color: #1d4ed8;
+  border-radius: 8px;
+  color: #2563eb;
   background: #eff6ff;
 }
 
@@ -248,7 +254,7 @@
 
 .gauge__value {
   margin: 0;
-  font-size: 34px;
+  font-size: 24px;
   line-height: 1.1;
   font-weight: 700;
   color: #111827;
@@ -256,9 +262,10 @@
 
 .gauge__label {
   margin: 2px 0 0;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.3;
-  color: #6b7280;
+  font-weight: 500;
+  color: #4b5563;
 }
 
 .model-badges {
@@ -303,4 +310,6 @@
   }
 }
 </style>
+
+
 
