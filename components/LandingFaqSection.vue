@@ -1,4 +1,4 @@
-﻿<script setup lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue'
 
 type FaqItem = {
@@ -8,36 +8,36 @@ type FaqItem = {
 
 const items: FaqItem[] = [
   {
-    question: 'How does AskGPT improve my writing quality?',
-    answer: 'AskGPT reviews your draft and helps refine clarity, tone, and structure so your final writing is sharper and easier to understand.'
+    question: 'What can I use AskGPT for?',
+    answer: 'AskGPT is built for serious writing. Draft, rewrite, humanize, check AI content, scan for plagiarism, fix grammar, translate, and even edit or sign PDFs'
   },
   {
-    question: 'Can I use AskGPT for different writing formats?',
-    answer: 'Yes. You can use it for emails, reports, proposals, product copy, social posts, and more with guidance tailored to each format.'
+    question: 'Can AskGPT detect AI-generated content?',
+    answer: 'Yes. AskGPT can help analyze text for indicators of AI-generated writing.'
   },
   {
-    question: 'Will my original voice still be preserved?',
-    answer: 'Yes. Suggestions are designed to strengthen what you wrote while keeping your intent and style intact.'
+    question: 'Can it humanize AI-written text?',
+    answer: 'Yes. It can rewrite AI-like drafts so they read more naturally and sound more human.'
   },
   {
-    question: 'Is AskGPT suitable for professional teams?',
-    answer: 'AskGPT supports consistent communication standards and faster iteration, which makes it practical for team workflows.'
+    question: 'Does AskGPT check for plagiarism?',
+    answer: 'Yes. You can scan writing for potential plagiarism issues before publishing or submitting.'
   },
   {
-    question: 'Does AskGPT support multilingual writing?',
-    answer: 'Yes. You can draft and improve content in multiple languages while maintaining natural phrasing and correct tone.'
+    question: 'Can AskGPT improve my writing?',
+    answer: 'Yes. AskGPT helps improve clarity, grammar, tone, and structure in your writing.'
   },
   {
-    question: 'Can I control how formal or casual the output is?',
-    answer: 'You can. AskGPT can adjust style and tone to match the audience and channel you are writing for.'
+    question: 'What types of writing is it built for?',
+    answer: 'It is built for professional and academic writing, including essays, emails, reports, and more.'
   },
   {
-    question: 'Is my data kept private and secure?',
-    answer: 'Your content is handled with privacy in mind, and access is limited to provide a secure writing experience.'
+    question: 'Does AskGPT support multiple languages?',
+    answer: 'Yes. AskGPT supports multilingual writing and translation workflows.'
   },
   {
-    question: 'How quickly can I get started?',
-    answer: 'You can start immediately. Paste your draft, choose the outcome you need, and apply suggestions in minutes.'
+    question: 'Can I edit or sign PDFs?',
+    answer: 'Yes. AskGPT also includes tools to edit and sign PDF documents.'
   }
 ]
 
@@ -51,7 +51,7 @@ const toggleItem = (index: number) => {
 <template>
   <section class="faq-section" aria-labelledby="faq-heading">
     <h2 id="faq-heading" class="faq-title">
-      Frequently Asked Questions
+      FAQ
     </h2>
 
     <div class="faq-accordion">
@@ -68,7 +68,7 @@ const toggleItem = (index: number) => {
         >
           <span>{{ item.question }}</span>
           <span class="faq-icon" aria-hidden="true">
-            {{ openIndex === index ? '−' : '+' }}
+            {{ openIndex === index ? '-' : '+' }}
           </span>
         </button>
 
@@ -92,6 +92,7 @@ const toggleItem = (index: number) => {
 .faq-title {
   margin: 0;
   text-align: center;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
