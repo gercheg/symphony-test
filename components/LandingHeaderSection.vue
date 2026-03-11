@@ -1,10 +1,10 @@
 <template>
   <header
-    class="box-border flex h-[88px] items-center justify-between border-b border-[#d1d5db] px-4 py-4 lg:px-[168px]"
+    class="box-border flex h-[88px] items-center justify-between border-b border-[#d1d5db] px-[168px] py-4"
   >
     <a
       href="/"
-      class="inline-flex h-[38px] w-[160px] items-center gap-[11px] text-[#000000] no-underline"
+      class="inline-flex h-[38px] w-[160px] items-center gap-[11px] text-[#030712] no-underline"
       aria-label="AskGPT home"
     >
       <svg
@@ -47,3 +47,4 @@
     </button>
   </header>
 </template>
+
