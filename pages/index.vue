@@ -60,6 +60,7 @@ useLandingSeo()
           </article>
         </div>
       </section>
+      <LandingPartnerTrustBar />
       <LandingFaqSection />
     </main>
 
